@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int n, t, r, sum = 0, f;
+    cin >> n;
+    t = n;
+    while (t) {
+        r = t % 10;
+        f = 1;
+        for (int i = 1; i <= r; i++)
+            f *= i;
+        sum += f;
+        t /= 10;
+    }
+    if (sum == n)
+        cout << "Strong Number";
+    else
+        cout << "Not a Strong Number";
+    return 0;
+}
