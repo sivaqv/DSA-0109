@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int n, d, freq[10] = {0};
+    cin >> n;
+    while (n > 0) {
+        d = n % 10;
+        freq[d]++;
+        n /= 10;
+    }
+    for (int i = 0; i < 10; i++)
+        if (freq[i] > 0)
+            cout << i << " = " << freq[i] << endl;
+    return 0;
+}
