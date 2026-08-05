@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Student {
+private:
+    int id;
+    string name;
+public:
+    Student(int i = 0, string n = "") : id(i), name(n) {}
+    // Overloading << operator using friend function
+    friend ostream& operator<<(ostream &out, const Student &s) {
+        out << "ID: " << s.id << ", Name: " << s.name;
+        return out;
+    }
+};
+int main() {
+    int id;
+    string name;
+    cout << "Enter Student ID: ";
+    cin >> id;
+    cin.ignore();
+    cout << "Enter Student Name: ";
+    getline(cin, name);
+    Student s(id, name);
+    cout << "\nOutput:\nStudent Details: " << s << endl;
+    return 0;
+}
