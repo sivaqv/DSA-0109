@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+class Number {
+private:
+    int value;
+public:
+    Number(int v = 0) : value(v) {}
+    // Overloading == operator
+    bool operator==(const Number &obj) const {
+        return value == obj.value;
+    }
+};
+int main() {
+    int n1, n2;
+    cout << "Enter first number: ";
+    cin >> n1;
+    cout << "Enter second number: ";
+    cin >> n2;
+    Number num1(n1), num2(n2);
+    cout << "\nOutput:\n";
+    if (num1 == num2) {
+        cout << "Both objects are EQUAL." << endl;
+    } else {
+        cout << "Both objects are NOT EQUAL." << endl;
+    }
+    return 0;
+}
