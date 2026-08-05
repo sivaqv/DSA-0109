@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+class Counter {
+private:
+    int count;
+public:
+    Counter(int c = 0) : count(c) {}
+    // Overloading prefix ++ operator
+    Counter& operator++() {
+        ++count;
+        return *this;
+    }
+    void display() const {
+        cout << "Count: " << count << endl;
+    }
+};
+int main() {
+    int val;
+    cout << "Enter initial counter value: ";
+    cin >> val;
+    Counter c(val);
+    cout << "\nOutput:\nInitial Value -> ";
+    c.display();
+    ++c; // Incrementing
+    cout << "After Increment (++c) -> ";
+    c.display();
+    return 0;
+}
